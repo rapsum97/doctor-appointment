@@ -66,9 +66,11 @@ class FrontendController extends Controller
         $bookings_pending = [];
         if (isset($appointment->id)) {
             $times = Time::where('appointment_id', $appointment->id)->where('status', 0)->get();
-            $bookings = Booking::latest()->where('user_id', auth()->user()->id)->where('doctor_id', $doctorID)->get();
-            $bookings_vistited = Booking::latest()->where('user_id', auth()->user()->id)->where('doctor_id', $doctorID)->where('status', 1)->get();
-            $bookings_pending = Booking::latest()->where('user_id', auth()->user()->id)->where('doctor_id', $doctorID)->where('status', 0)->get();
+            if (Auth::check()) {
+                $bookings = Booking::latest()->where('user_id', auth()->user()->id)->where('doctor_id', $doctorID)->get();
+                $bookings_vistited = Booking::latest()->where('user_id', auth()->user()->id)->where('doctor_id', $doctorID)->where('status', 1)->get();
+                $bookings_pending = Booking::latest()->where('user_id', auth()->user()->id)->where('doctor_id', $doctorID)->where('status', 0)->get();
+            }
         }
         return view('appointment', compact('times', 'bookings', 'bookings_vistited', 'bookings_pending', 'user', 'doctorID', 'date'));
     }

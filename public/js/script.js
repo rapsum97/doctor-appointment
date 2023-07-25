@@ -15,7 +15,7 @@ jQuery(document).ready(function() {
   // DateTime Picker
   var dateToday = new Date();
   jQuery('#datetimeslot').datetimepicker({ icons: { time: 'far fa-clock' }, format: 'YYYY-MM-DD' });
-  jQuery('#datetimeslot_front').datetimepicker({ icons: { time: 'far fa-clock' }, format: 'YYYY-MM-DD' });
+  jQuery('#datetimeslot_front').datetimepicker({ icons: { time: 'far fa-clock' }, format: 'YYYY-MM-DD', minDate: dateToday });
   // Appointment Details
   jQuery('.appointment_time_details input').on('click', function() {
     var radioValue = $(".appointment_time_details input[name='time_app']:checked").attr('data-id');

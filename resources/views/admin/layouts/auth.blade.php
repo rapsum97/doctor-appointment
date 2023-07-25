@@ -1,9 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ config('app.name', 'DoctorApps') }}</title>
     <title>RAPSUM FAM | Authentication Pages</title>
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="{{ asset('images/profile-default.svg') }}" rel="icon">
+    <link href="{{ asset('images/profile-default.svg') }}" rel="apple-touch-icon">
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">

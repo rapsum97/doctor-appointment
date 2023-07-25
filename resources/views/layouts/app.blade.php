@@ -3,7 +3,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>{{ config('app.name', 'DoctorApps') }}</title>
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -32,10 +31,6 @@
     <link rel="stylesheet" href="{{ asset('templates/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{ asset('templates/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{ asset('templates/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
-    {{-- <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"> --}}
 
     <!-- Template Main CSS File -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
@@ -53,10 +48,10 @@
         <div id="topbar" class="d-flex align-items-center">
             <div class="container d-flex align-items-center justify-content-center justify-content-md-between">
             <div class="align-items-center d-none d-md-flex">
-                <i class="bi bi-clock"></i> Monday - Saturday, 8AM to 10PM
+                <i class="bi bi-clock"></i> Monday - Saturday - 7AM to 9PM
             </div>
             <div class="d-flex align-items-center">
-                <i class="bi bi-phone"></i> Call us now +1 5589 55488 55
+                <i class="bi bi-phone"></i> Call Us Now +91 (123)-4567-890
             </div>
             </div>
         </div>
@@ -67,12 +62,6 @@
                 <a class="navbar-brand logo me-auto" href="{{ url('/') }}">
                     {{ config('app.name', 'DoctorApps') }}
                 </a>
-                {{-- <nav id="navbar" class="navbar order-last order-lg-0">
-                    <ul>
-                        <li><a class="nav-link" href="{{ url('/') }}">{{ __('Home') }}</a></li>
-                    </ul>
-                    <i class="bi bi-list mobile-nav-toggle"></i>
-                </nav> --}}
                 <a class="appointment-btn bg-gradient-info ml-1 mr-0" href="{{ url('/') }}"><i class="fas fa-home mr-2"></i>{{ __('Home') }}</a>
                 @guest
                     @if (Route::has('login'))
@@ -109,18 +98,6 @@
         </header>
 
         @yield('content')
-
-        <!-- ======= Footer ======= -->
-        <footer id="footer" class="fixed-bottom">
-            <div class="container">
-              <div class="copyright">
-                © Copyright <strong><span>RAPSUM FAM</span></strong>. All Rights Reserved
-              </div>
-              <div class="credits">
-                Designed By <a href="https://bootstrapmade.com/">RAPSUM FAM</a>
-              </div>
-            </div>
-        </footer>
     </div>
 
     <!-- jQuery -->
